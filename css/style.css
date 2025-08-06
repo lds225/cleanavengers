@@ -266,7 +266,7 @@ body {
 }
 .input_line > input{
 	padding: 15px 18px;
-	border: 1px solid #00C1FF;
+	border: 2px solid #00C1FF;
 	border-radius: 5px;
 	background-color: transparent;
 	font-size: 18px;
@@ -452,7 +452,7 @@ body {
 		font-size: 1px;
 	}
 	.container {
-		margin-top: 100px;
+		margin-top: 80px;
 	}
 	.con_tit {
 		font-size: 6.2vw;
@@ -482,15 +482,15 @@ body {
 	}
 	.total_box {
 		width: 100%;
-		margin-top: 20px;
+		margin-top: 30px;
 		padding: 42px 30px;
 		font-size: 10vw;
 	}
 	.graph {
-		margin-top : 35px;
+		margin-top : 30px;
 	}
 	.table .img_box {
-		margin-top: 50px;
+		margin-top: 30px;
 	}
 	.text_box {
 		padding: 30px 0;
@@ -514,10 +514,10 @@ body {
 		font-size: 20px;
 	}
 	.form_btn {
-		font-size: 16px;
-		font-weight: 800;
 		padding: 15px 0;
 		background-color: #00C1FF;
+		font-size: 18px;
+		font-weight: 900;
 	}
 	.input_line {
 		flex-direction: column;
@@ -533,6 +533,12 @@ body {
 		width: 14px;
 		height: 14px;
 	}
+	.kakao, .expense_cont {
+		margin-top: 30px;
+	}
+	.why_list {
+		margin-top: 30px;
+	}
 	.why_item .text_box{
 		padding: 30px 0;
 	}
@@ -544,7 +550,7 @@ body {
 		font-weight: 700;
 	}
 	.check_list, .welcome_list {
-		margin-top: 35px;
+		margin-top: 30px;
 	}
 	.check_item, .welcome_item {
 		font-size: 3.2vw;
@@ -553,7 +559,7 @@ body {
 		margin-bottom: 15px;
 	}
 	.img_list {
-		margin-top: 35px;
+		margin-top: 30px;
 	}
 	.img_list .img {
 		width: 100%;
