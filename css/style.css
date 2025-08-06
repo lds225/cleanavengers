@@ -461,9 +461,12 @@ body {
 	.sub_tit {
 		font-size: 4.5vw;
 	}
+	.text_sub {
+		margin-top: 15px;
+	}
 	.text_sub, .table .text_sub {
 		font-size: 14px;
-		font-weight: 300px;
+		font-weight: 300;
 	}
 	.expense_cont .title {
 		font-size: 5vw;
@@ -482,6 +485,9 @@ body {
 		margin-top: 20px;
 		padding: 42px 30px;
 		font-size: 10vw;
+	}
+	.graph {
+		margin-top : 35px;
 	}
 	.table .img_box {
 		margin-top: 50px;
