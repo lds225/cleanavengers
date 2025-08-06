@@ -480,7 +480,8 @@ body {
 	.total_box {
 		width: 100%;
 		margin-top: 20px;
-		font-size: 7vw;
+		padding: 42px 30px;
+		font-size: 10vw;
 	}
 	.table .img_box {
 		margin-top: 50px;
@@ -508,7 +509,7 @@ body {
 	}
 	.form_btn {
 		font-size: 16px;
-		font-weight: 500;
+		font-weight: 600;
 		padding: 15px 0;
 		background-color: #00C1FF;
 	}
