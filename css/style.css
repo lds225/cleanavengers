@@ -78,10 +78,9 @@ body {
 	width: 100%;
 	max-width: 100%;
 	background-color: #000000;
-	/* background-image: url(../img/bg.jpg); */
-	/* background-repeat: no-repeat;
-	background-size: contain;
-	background-position: top bottom; */
+	background-image: url(../img/bg2.jpg);
+	background-repeat: repeat-y;
+	background-size: cover;
 	word-break: keep-all;
 	white-space: nowrap;
 	font-size: 16px;
