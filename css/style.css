@@ -77,7 +77,7 @@ button {
 body {
 	width: 100%;
 	max-width: 100%;
-	background-color: #000111;
+	background-color: #000000;
 	/* background-image: url(../img/bg.jpg); */
 	/* background-repeat: no-repeat;
 	background-size: contain;
@@ -248,11 +248,11 @@ body {
 }
 .form_box {
 	width: 100%;
-	padding: 40px 30px;
+	padding: 50px 30px;
 	border-radius: 10px;
 }
 .form_tit {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-size: 24px;
 	font-weight: 700;
 	color: #00C1FF;
@@ -266,9 +266,9 @@ body {
 }
 .input_line > input{
 	padding: 15px 18px;
-	border: 2px solid #00C1FF;
+	border: 1px solid #444444;
 	border-radius: 5px;
-	background-color: transparent;
+	background-color: #222222;
 	font-size: 18px;
 	font-weight: 500;
 	color: #eee;
@@ -278,12 +278,13 @@ body {
 .input_line > input::placeholder{
 	font-size: 18px;
 	font-weight: 500;
-	color: #eee;
+	color: #dddddd;
+}
+.input_line > input[type=text]:focus {
+	border: 1px solid #00C1FF;
 }
 .check_box {
-	display: flex;
-	flex-direction: column;
-	padding: 30px 0;
+	margin-top: 15px;
 }
 .check_box input[type=checkbox] {
     display: none;
@@ -292,6 +293,10 @@ body {
 .check_box input[type=checkbox] + label {
     cursor: pointer;
     border: 0;
+}
+.check_agree1 {
+	display: flex;
+	align-items: center;
 }
 .warn {
 	margin-left: 5px;
@@ -324,11 +329,13 @@ body {
 }
 .form_btn {
 	width: 100%;
+	margin-top: 30px;
 	padding: 20px 0;
-	background: #444;
+	background-color: #00C1FF;
+	/* background: #444; */
 	border: 0;
 	border-radius: 5px;
-	font-size: 18px;
+	font-size: 26px;
 	font-weight: 600;
 	text-align: center;
 	color: #fff;
@@ -440,11 +447,11 @@ body {
 	z-index: 9999;
 }
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   .form_btn:hover {
 		background-color: #00C1FF;
 	}
-}
+} */
 
 @media screen and (max-width: 768px) {
 	.wrap {
@@ -508,23 +515,21 @@ body {
 		margin-top: 40px;
 	}
 	.form_box {
-		padding: 20px;
+		padding: 25px 20px;
 	}
 	.form_tit {
+		margin-bottom: 20px;
 		font-size: 20px;
 	}
 	.form_btn {
 		padding: 15px 0;
-		background-color: #00C1FF;
+		/* background-color: #00C1FF; */
 		font-size: 18px;
 		font-weight: 900;
 	}
 	.input_line {
 		flex-direction: column;
 		gap: 20px;
-	}
-	.check_box {
-		padding: 15px 0 30px; 
 	}
 	.check_box input[type=checkbox] + label {
 		font-size: 12px;
