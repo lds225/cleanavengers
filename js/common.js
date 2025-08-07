@@ -10,4 +10,5 @@ $(function(){
   closeBtn.on('click',function(){
     popup.removeClass('on');
   })
+
 });
