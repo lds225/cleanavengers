@@ -269,85 +269,89 @@
     <script>
       $(function() {
         $(document).on("click", ".form_btn", function(e) {
-            e.preventDefault();
+          e.preventDefault();
         
-        var eduThis = $(this);
+          var eduThis = $(this);
         
-            let c_name = $(this).parents("form").find("input[name=c_name]").val();
-            let c_tel = $(this).parents("form").find("input[name=c_tel]").val();
-            let c_age = $(this).parents("form").find("input[name=c_age]").val();
+          let c_name = $(this).parents("form").find("input[name=c_name]").val();
+          let c_tel = $(this).parents("form").find("input[name=c_tel]").val();
+          let c_age = $(this).parents("form").find("input[name=c_age]").val();
 
-            if (c_name == "") {
-              alert("이름을 입력해주세요.");
-              return false;
-            }
+          if (c_name == "") {
+            alert("이름을 입력해주세요.");
+            return false;
+          }
 
-            if (c_tel == "") {
-              alert("연락처를 입력해주세요.");
-              return false;
-            }
+          if (c_tel == "") {
+            alert("연락처를 입력해주세요.");
+            return false;
+          }
 
-            if (c_age == "") {
-              alert("나이를 입력해주세요.");
-              return false;
-            }
+          if (c_age == "") {
+            alert("나이를 입력해주세요.");
+            return false;
+          }
 
-            if (!$(this).parents("form").find('input[name=check]').prop('checked')) {
-              alert("개인정보취급방침에 동의해주세요.");
-              return false;
-            }
+          if (!$(this).parents("form").find('input[name=check]').prop('checked')) {
+            alert("개인정보취급방침에 동의해주세요.");
+            return false;
+          }
 
-            const url = 'https://cleanavengers.co.kr/landing/homeStartupApi/?cName=' + c_name + '&cTel=' + c_tel + '&cAge=' + c_age + '&adtype=' + 'DM';
+          const queryString = location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const c_adtype = urlParams.get('adtype')
+          const url = 'https://cleanavengers.co.kr/landing/homeStartupApi/?cName=' + c_name + '&cTel=' + c_tel + '&cAge=' + c_age + '&adtype=' + c_adtype;
 
-            // Http.open('GET', url);
-            // Http.send();
-            // Http.onreadystatechange = (e) => {
-            //     console.log(Http.responseText);
-            // };
-            // window.open(url, "_blank");
+          // Http.open('GET', url);
+          // Http.send();
+          // Http.onreadystatechange = (e) => {
+          //     console.log(Http.responseText);
+          // };
+          // window.open(url, "_blank");
 
-            // gtag('event', 'conversion', {'send_to': 'AW-11563377904/j9vYCKbghIsaEPDJ7Ikr'});
-            // gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
+          // gtag('event', 'conversion', {'send_to': 'AW-11563377904/j9vYCKbghIsaEPDJ7Ikr'});
+          // gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
 
-            $.ajax({
-                url: url,
-                type: "GET",
-                success: function (response) {
-                    console.log("sussess"+response); // 성공 시 응답 처리
-                    alert("신청이 완료되었습니다.");
-            if (response == "Y"){
-              console.log("sussess2"+response); // 성공 시 응답 처리
-              dablena('track', 'CompleteRegistration');
-              TenpingScript.SendConversion();
-              window.karrotPixel.track('Lead');
-              //kakaoPixel('4199157429150005960').participation(Consulting);
-              //kakaoPixel('4199157429150005960').pageView();
-              kakaoPixel('4199157429150005960').participation('Consulting');
-              gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
-              
-              eduThis.parents("form").submit();
-            } else {
+          $.ajax({
+            url: url,
+            type: "GET",
+
+            success: function (response) {
+              console.log("sussess"+response); // 성공 시 응답 처리
+              alert("신청이 완료되었습니다.");
+              if (response == "Y"){
+                console.log("sussess2"+response); // 성공 시 응답 처리
+                dablena('track', 'CompleteRegistration');
+                TenpingScript.SendConversion();
+                window.karrotPixel.track('Lead');
+                //kakaoPixel('4199157429150005960').participation(Consulting);
+                //kakaoPixel('4199157429150005960').pageView();
+                kakaoPixel('4199157429150005960').participation('Consulting');
+                gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
+                
+                eduThis.parents("form").submit();
+              } else {
+                alert("창업 신청 실패 했습니다. 입력 정보를 확인해 주세요.");
+                return false;
+              }
+            },
+
+            error: function (jqXHR, textStatus, errorThrown) {
               alert("창업 신청 실패 했습니다. 입력 정보를 확인해 주세요.");
               return false;
+              console.error("Error:", textStatus, errorThrown); // 실패 시 에러 처리
             }
-            
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-            alert("창업 신청 실패 했습니다. 입력 정보를 확인해 주세요.");
-            return false;
-                    console.error("Error:", textStatus, errorThrown); // 실패 시 에러 처리
-                }
-            });
+          });
         });
 
         $("input[name=c_tel]").on("input", function() {
-            var value = $(this).val().replace(/[^0-9]/g, '');
+          var value = $(this).val().replace(/[^0-9]/g, '');
 
-            if (value.length > 11) {
-                value = value.substring(0, 11);
-            }
+          if (value.length > 11) {
+              value = value.substring(0, 11);
+          }
 
-            $(this).val(value);
+          $(this).val(value);
         });
     });
   </script>
