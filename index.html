@@ -268,6 +268,11 @@
 
     <script>
       $(function() {
+        const queryString = location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let c_adtype = urlParams.get('adtype')
+        console.log(c_adtype);
+
         $(document).on("click", ".form_btn", function(e) {
           e.preventDefault();
         
@@ -297,9 +302,6 @@
             return false;
           }
 
-          const queryString = location.search;
-          const urlParams = new URLSearchParams(queryString);
-          const c_adtype = urlParams.get('adtype')
           const url = 'https://cleanavengers.co.kr/landing/homeStartupApi/?cName=' + c_name + '&cTel=' + c_tel + '&cAge=' + c_age + '&adtype=' + c_adtype;
 
           // Http.open('GET', url);
