@@ -303,16 +303,6 @@
 
           const url = 'https://cleanavengers.co.kr/landing/homeStartupApi/?cName=' + c_name + '&cTel=' + c_tel + '&cAge=' + c_age + '&adtype=' + c_adtype;
 
-          // Http.open('GET', url);
-          // Http.send();
-          // Http.onreadystatechange = (e) => {
-          //     console.log(Http.responseText);
-          // };
-          // window.open(url, "_blank");
-
-          // gtag('event', 'conversion', {'send_to': 'AW-11563377904/j9vYCKbghIsaEPDJ7Ikr'});
-          // gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
-
           $.ajax({
             url: url,
             type: "GET",
@@ -325,8 +315,6 @@
                 dablena('track', 'CompleteRegistration');
                 TenpingScript.SendConversion();
                 window.karrotPixel.track('Lead');
-                //kakaoPixel('4199157429150005960').participation(Consulting);
-                //kakaoPixel('4199157429150005960').pageView();
                 kakaoPixel('4199157429150005960').participation('Consulting');
                 gtag('event', 'conversion', {'send_to': 'AW-16959740967/3_GBCLfB5LAaEKe4hJc_'});
                 
